@@ -52,7 +52,15 @@ function setup(){
 }
 
 function draw(){
-    
+    var isPlaying = false;
+            for(var i = 0; i < numAudio; i++){
+                if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
+                    isPlaying = true;
+                }
+            }
+            if(isPlaying){
+                console.log("playing");
+            }
     for(var i = 0; i < timers.length; i++){
         timers[i].update();
         timers[i].show();

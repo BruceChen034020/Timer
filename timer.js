@@ -132,7 +132,15 @@ function Timer(){
             musicPlaying = false;
         }
         if(interval <= 0 && this.active === true){
-            
+            var isPlaying = false;
+            for(var i = 0; i < numAudio; i++){
+                if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
+                    isPlaying = true;
+                }
+            }
+            if(isPlaying){
+                console.log("沒救了");
+            }
             
             var random1 = Math.random();
             random1 *= audio.length;
