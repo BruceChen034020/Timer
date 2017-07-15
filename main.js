@@ -21,7 +21,7 @@ var button1; // (Button)
 var textBox1; // (textarea)
 var timers = []; // (Timer array)
 var audio = [];  // audios played when time's up (Audio array)
-var numAudio = 123; // number of audio files (integer)
+var numAudio = 125; // number of audio files (integer)
 
 /* p5 functions */
 function setup(){
