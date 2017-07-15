@@ -26,7 +26,7 @@ var button2; // add timer (Button)
 
 /* p5 functions */
 function setup(){
-    ShowTime();
+    
 
     label1 = document.createElement("label");
     document.body.appendChild(label1);
@@ -51,7 +51,7 @@ function setup(){
 }
 
 function draw(){
-    ShowTime();
+    
     for(var i = 0; i < timers.length; i++){
         timers[i].update();
         timers[i].show();

@@ -128,6 +128,7 @@ function Timer(){
                 audio[i].pause();
                 audio[i].currentTime = 0;
             }
+            console.log("Music paused");
             var random1 = Math.random();
             random1 *= audio.length;
             random1 = parseInt(random1);
