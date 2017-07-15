@@ -1,3 +1,8 @@
+/*
+作者: 陳光穎 Bruce Chen
+最後修改日期: 2017/7/15
+版本: 1.0.0.2
+*/
 function Timer(){
     this.display; // (Label)
     this.reset; // (Button)
@@ -115,7 +120,7 @@ function Timer(){
         var sec = parseInt(interval/1000) % 60;
         this.display.innerHTML = hr + " : " + min + " : " + sec;
         if(!this.active){
-            this.label5.innerHTML = "Destination: ";
+            this.label5.innerHTML = "Destination: Time Expired! / " + this.destination;
             this.display.innerHTML = "00 : 00 : 00";
         }
     }
@@ -148,6 +153,7 @@ function Timer(){
             audio[random1].play();
             musicPlaying = true;
             console.log("\r\n\r\nplay music #" + random1 + "\r\n");
+            musicNumber = random1;
             this.active = false;
             if(random1 === 0){
                 console.log("123");

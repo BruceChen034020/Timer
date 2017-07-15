@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2017/7/15
-版本: 1.0.0.1
+版本: 1.0.0.2
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -24,6 +24,7 @@ var audio = [];  // audios played when time's up (Audio array)
 var numAudio = 125; // number of audio files (integer)
 var button2; // add timer (Button)
 var musicPlaying = false; // a music is being played in this page (boolean)
+var musicNumber; // debug use only (integer)
 
 /* p5 functions */
 function setup(){
@@ -53,13 +54,24 @@ function setup(){
 
 function draw(){
     var isPlaying = false;
-            for(var i = 0; i < numAudio; i++){
+            /*for(var i = 0; i < numAudio; i++){
                 if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
                     isPlaying = true;
                 }
-            }
+            }*/
+            isPlaying = audio[musicNumber].currentTime > 0 && !audio[musicNumber].paused && !audio[musicNumber].ended && audio[musicNumber].readyState > 2;
             if(isPlaying){
                 console.log("playing");
+            }else if(audio[musicNumber].currentTime <= 0){
+                console.log("audio currentTime not positive");
+            }else if(audio[musicNumber].paused){
+                console.log("audio paused");
+            }else if(audio[musicNumber].ended){
+                console.log("audio ended");
+            }else if(audio[musicNumber].readyState <= 2){
+                console.log("audio not ready");
+            }else{
+                console.log("other issue");
             }
     for(var i = 0; i < timers.length; i++){
         timers[i].update();
