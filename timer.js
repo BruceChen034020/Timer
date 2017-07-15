@@ -13,6 +13,7 @@ function Timer(){
     this.destination; //(Date)
     let self = this; // this (Timer)
     this.active; // whether this timer is active (boolean)
+    this.delete; // (Button)
 
     this.initialization = function(){ // (void)
         
@@ -53,6 +54,11 @@ function Timer(){
         this.stop = document.createElement("button");
         //document.body.appendChild(this.stop);
         this.stop.innerHTML = "Stop";
+
+        this.delete = document.createElement("button");
+        document.body.appendChild(this.delete);
+        this.delete.innerHTML = "Delete this timer";
+        this.delete.addEventListener("click", this.Delete);
 
         createP('');
 
@@ -142,5 +148,35 @@ function Timer(){
                 }
             }
         }
+    }
+
+    this.Delete = function(){ // delete timer / onclick event (void)
+        document.body.removeChild(self.display);
+        document.body.removeChild(self.reset);
+        //document.body.removeChild(self.start);
+        //document.body.removeChild(self.stop);
+        document.body.removeChild(self.annotation);
+        document.body.removeChild(self.textBoxHr);
+        document.body.removeChild(self.textBoxMin);
+        document.body.removeChild(self.labelHr);
+        document.body.removeChild(self.labelMin);
+        document.body.removeChild(self.label5);
+        document.body.removeChild(self.delete);
+        console.log("Delete timer");
+        /*     this.display; // (Label)
+    this.reset; // (Button)
+    this.start; // (Button)
+    this.stop; // stop / pause (Button)
+    this.annotation; // (TextBox)
+    this.nowTime; // (Date)
+    this.textBoxHr; // (Textarea)
+    this.textBoxMin; // (textarea)
+    this.labelHr; // (Label)
+    this.labelMin; // (Label)
+    this.label5; // (Label)
+    this.destination; //(Date)
+    let self = this; // this (Timer)
+    this.active; // whether this timer is active (boolean)
+    this.delete; // (Button) */
     }
 }

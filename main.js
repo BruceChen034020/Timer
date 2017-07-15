@@ -22,6 +22,7 @@ var textBox1; // (textarea)
 var timers = []; // (Timer array)
 var audio = [];  // audios played when time's up (Audio array)
 var numAudio = 125; // number of audio files (integer)
+var button2; // add timer (Button)
 
 /* p5 functions */
 function setup(){
@@ -72,4 +73,16 @@ function button1_Clicked(){ // onclick event (void)
     document.body.removeChild(button1);
     document.body.removeChild(label1);
     document.body.removeChild(textBox1);
+
+    createP('');
+
+    button2 = document.createElement("button");
+    document.body.appendChild(button2);
+    button2.innerHTML = "Add timer";
+    button2.addEventListener("click", addTimer);
+}
+function addTimer(){
+    var l = timers.length;
+    timers[l] = new Timer();
+    timers[l].initialization();
 }
