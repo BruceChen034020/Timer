@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2017/7/15
-版本: 1.0.0.4
+版本: 1.0.0.5
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -67,11 +67,11 @@ function draw(){
                  if(audio[musicNumber].paused){
                 console.log(musicNumber + " audio paused");
               } if(audio[musicNumber].currentTime <= 0){
-                console.log(musicNumber + " audio currentTime not positive");
+                console.log(musicNumber + " audio currentTime not positive: " + audio[musicNumber].currentTime);
               } if(audio[musicNumber].ended){
                 console.log(musicNumber + " audio ended");
               } if(audio[musicNumber].readyState <= 2){
-                console.log(musicNumber + " audio not ready");
+                console.log(musicNumber + " audio not ready: " + audio[musicNumber].readyState);
             }
             }
     for(var i = 0; i < timers.length; i++){
