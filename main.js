@@ -23,6 +23,7 @@ var timers = []; // (Timer array)
 var audio = [];  // audios played when time's up (Audio array)
 var numAudio = 125; // number of audio files (integer)
 var button2; // add timer (Button)
+var musicPlaying = false; // a music is being played in this page (boolean)
 
 /* p5 functions */
 function setup(){

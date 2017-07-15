@@ -123,16 +123,22 @@ function Timer(){
     this.update = function(){ // see if time's up (void)
         var now = new Date();
         var interval = parseInt(this.destination - now);
-        if(interval <= 0 && this.active === true){
+        if(interval <= 7000 && this.active === true && musicPlaying){
             for(var i = 0; i < numAudio; i++){
                 audio[i].pause();
                 audio[i].currentTime = 0;
             }
             console.log("Music paused");
+            musicPlaying = false;
+        }
+        if(interval <= 0 && this.active === true){
+            
+            
             var random1 = Math.random();
             random1 *= audio.length;
             random1 = parseInt(random1);
             audio[random1].play();
+            musicPlaying = true;
             console.log("\r\n\r\nplay music #" + random1 + "\r\n");
             this.active = false;
             if(random1 === 0){
