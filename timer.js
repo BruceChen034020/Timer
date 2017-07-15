@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2017/7/15
-版本: 1.0.0.3
+版本: 1.0.0.4
 */
 function Timer(){
     this.display; // (Label)
