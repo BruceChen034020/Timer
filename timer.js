@@ -1,7 +1,7 @@
-/*
+﻿/*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2017/7/15
-版本: 1.0.0.6 - test
+版本: 1.0.0.6
 */
 function Timer(){
     this.display; // (Label)
@@ -128,14 +128,14 @@ function Timer(){
     this.update = function(){ // see if time's up (void)
         var now = new Date();
         var interval = parseInt(this.destination - now);
-        /*if(interval <= 7000 && this.active === true && musicPlaying){
+        if(interval <= 7000 && this.active === true && musicPlaying){
             for(var i = 0; i < numAudio; i++){
                 audio[i].pause();
                 audio[i].currentTime = 0;
             }
             console.log("Music paused");
             musicPlaying = false;
-        }*/
+        }
         if(interval <= 0 && this.active === true){
             var isPlaying = false;
             for(var i = 0; i < numAudio; i++){
