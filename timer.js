@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2017/7/15
-版本: 1.0.0.6
+版本: 1.0.0.7
 */
 function Timer(){
     this.display; // (Label)
@@ -21,16 +21,16 @@ function Timer(){
     this.delete; // (Button)
 
     this.initialization = function(){ // (void)
-        
+
         this.active = false;
-        
+
         createP('');
-        
+
         this.display = document.createElement("label");
         document.body.appendChild(this.display);
         this.display.innerHTML = "00 : 00 : 00";
         this.display.style.fontSize = "72px";
-        
+
         this.textBoxHr = document.createElement("textarea");
         document.body.appendChild(this.textBoxHr);
         this.textBoxHr.innerHTML = "0";
@@ -51,7 +51,7 @@ function Timer(){
         document.body.appendChild(this.reset);
         this.reset.innerHTML = "Start";
         this.reset.addEventListener("click", this.Reset);
-        
+
         this.start = document.createElement("button");
         //document.body.appendChild(this.start);
         this.start.innerHTML = "Start";
@@ -146,7 +146,7 @@ function Timer(){
             if(isPlaying){
                 console.log("沒救了");
             }
-            
+
             var random1 = Math.random();
             random1 *= audio.length;
             random1 = parseInt(random1);
@@ -159,13 +159,13 @@ function Timer(){
                 console.log("123");
                 for(var i = 1; i <= 34; i++){
                     setTimeout(function(){ audio[0].play(); console.log("play"); }, i*1780);
-                    
+
                 }
             }
             if(random1 === 119){
                 for(var i = 1; i <= 12; i++){
                     setTimeout(function(){ audio[119].play(); console.log("play"); }, i*5500);
-                    
+
                 }
             }
         }
