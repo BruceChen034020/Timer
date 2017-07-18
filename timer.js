@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2017/7/15
-版本: 1.0.0.7
+版本: 1.0.0.8
 */
 function Timer(){
     this.display; // (Label)
@@ -59,6 +59,9 @@ function Timer(){
         this.stop = document.createElement("button");
         //document.body.appendChild(this.stop);
         this.stop.innerHTML = "Stop";
+
+        var v = document.createElement("button");
+        document.body.appendChild(v);
 
         this.delete = document.createElement("button");
         document.body.appendChild(this.delete);
