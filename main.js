@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2017/7/15
-版本: 1.0.0.6 - test
+版本: 1.0.0.7
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -28,7 +28,7 @@ var musicNumber = 0; // debug use only (integer)
 
 /* p5 functions */
 function setup(){
-    
+
 
     label1 = document.createElement("label");
     document.body.appendChild(label1);
@@ -49,10 +49,10 @@ function setup(){
         audio[i] = new Audio(fileName);
     }
     console.log(audio);
-    setInterval(draw, 3000); // execute even when this page lose focus
+    setInterval(draw2, 1000); // execute even when this page lose focus
 }
 
-function draw(){
+function draw2(){
     var isPlaying = false;
             /*for(var i = 0; i < numAudio; i++){
                 if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
@@ -60,7 +60,7 @@ function draw(){
                 }
             }*/
             isPlaying = audio[musicNumber].currentTime > 0 && !audio[musicNumber].paused && !audio[musicNumber].ended && audio[musicNumber].readyState > 2;
-            
+
             if(isPlaying){
                 console.log(musicNumber + " playing");
             }else{
@@ -72,7 +72,7 @@ function draw(){
                 console.log(musicNumber + " audio ended");
               } if(audio[musicNumber].readyState <= 2){
                 console.log(musicNumber + " audio not ready: " + audio[musicNumber].readyState);
-            }
+              }
             }
     for(var i = 0; i < timers.length; i++){
         timers[i].update();
