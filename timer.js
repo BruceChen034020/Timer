@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2017/7/15
-版本: 1.0.0.8
+版本: 1.0.0.9
 */
 function Timer(){
     this.display; // (Label)
@@ -91,6 +91,8 @@ function Timer(){
     }
 
     this.Reset = function(){ // onclick event (void)
+        console.log(self.textBoxHr.value.length);
+
         console.log(self.textBoxHr);
         console.log("Reset");
         self.nowTime = new Date();
@@ -101,6 +103,15 @@ function Timer(){
         console.log(self.textBoxMin);
         console.log(parseInt(self.textBoxHr.value)*60*60*1000 + parseInt(self.textBoxMin.value)*60*1000);
         nt += parseInt(self.textBoxHr.value)*60*60*1000 + parseInt(self.textBoxMin.value)*60*1000;
+        if(self.textBoxHr.value.length == 0){
+          console.log("Empty detected=========================");
+          nt = self.nowTime.getTime();
+          nt += parseInt(self.textBoxMin.value)*60*1000;
+        }
+        if(self.textBoxMin.value === ""){
+          nt = self.nowTime.getTime();
+          nt += parseInt(self.textBoxHr.value)*60*60*1000;
+        }
         console.log("nt = " + nt);
         self.destination = new Date();
         self.destination.setTime(nt);
@@ -109,6 +120,7 @@ function Timer(){
         console.log(self);
         console.log(self.textBoxHr);
         self.active = true;
+
     }
 
     this.show = function(){ // update screen (void)
