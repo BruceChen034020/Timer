@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
-最後修改日期: 2017/7/15
-版本: 1.0.0.9
+最後修改日期: 2017/7/20
+版本: 1.0.0.10
 */
 function Timer(){
     this.display; // (Label)
@@ -19,6 +19,7 @@ function Timer(){
     let self = this; // this (Timer)
     this.active; // whether this timer is active (boolean)
     this.delete; // (Button)
+    this.v; // separate the reset button and the delete button (Button)
 
     this.initialization = function(){ // (void)
 
@@ -60,8 +61,8 @@ function Timer(){
         //document.body.appendChild(this.stop);
         this.stop.innerHTML = "Stop";
 
-        var v = document.createElement("button");
-        document.body.appendChild(v);
+        this.v = document.createElement("button");
+        document.body.appendChild(this.v);
 
         this.delete = document.createElement("button");
         document.body.appendChild(this.delete);
@@ -198,6 +199,7 @@ function Timer(){
         document.body.removeChild(self.labelMin);
         document.body.removeChild(self.label5);
         document.body.removeChild(self.delete);
+        document.body.removeChild(self.v);
         console.log("Delete timer");
         /*     this.display; // (Label)
     this.reset; // (Button)
