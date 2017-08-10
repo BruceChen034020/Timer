@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2017/8/10
-版本: 1.0.1.1
+版本: 1.0.1.2
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -57,7 +57,9 @@ function draw2(){ // similar to draw, but not p5 function, called every second
     /* Update loadMessage */
     var musicList = [];
     for(var i=0; i<numAudio; i++){
+        console.log("i=" + i + "  readyState=" + audio[i].readyState);
         if(audio[i].readyState > 2){
+            console.log("push");
             musicList.push(i);
         }
     }
