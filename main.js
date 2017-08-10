@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2017/8/10
-版本: 1.0.1.3
+版本: 1.0.1.4
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -57,15 +57,41 @@ function draw2(){ // similar to draw, but not p5 function, called every second
     /* Update loadMessage */
     var musicList = [];
     for(var i=0; i<numAudio; i++){
-        console.log("i=" + i + "  readyState=" + audio[i].readyState);
+        
         if(audio[i].readyState > 2){
-            console.log("push");
+            
             musicList.push(i);
         }
     }
-    console.log(audio[musicNumber].readyState);
-    loadMessage.innerHTML = "Music ready: ";
-    loadMessage.value = "Music ready: ";
+    /*loadMessage0.innerHTML = "Music not ready 0: ";
+    loadMessage0.value = "Music not ready 0: ";
+    for(var i=0; i<musicList.length; i++){
+        if(audio[i].readyState == 0){
+            loadMessage0.innerHTML += musicList[i] + " ";
+            loadMessage0.value += musicList[i] + " ";
+        }
+    }
+
+    loadMessage1.innerHTML += "Music not ready 1: ";
+    loadMessage1.value += "Music not ready 1: ";
+    for(var i=0; i<musicList.length; i++){
+        if(audio[i].readyState == 1){
+            loadMessage0.innerHTML += musicList[i] + " ";
+            loadMessage0.value += musicList[i] + " ";
+        }
+    }
+
+    loadMessage.innerHTML += "Music not ready 2: ";
+    loadMessage.value += "Music not ready 2: ";
+    for(var i=0; i<musicList.length; i++){
+        if(audio[i].readyState == 2){
+            loadMessage.innerHTML += musicList[i] + " ";
+            loadMessage.value += musicList[i] + " ";
+        }
+    }*/
+
+    loadMessage.innerHTML = "\r\nMusic ready: ";
+    loadMessage.value = "\r\nMusic ready: ";
     for(var i=0; i<musicList.length; i++){
         loadMessage.innerHTML += musicList[i] + " ";
         loadMessage.value += musicList[i] + " ";
