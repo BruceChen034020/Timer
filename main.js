@@ -5,8 +5,8 @@
 聯絡方式
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
-最後修改日期: 2017/7/20
-版本: 1.0.0.10
+最後修改日期: 2017/8/10
+版本: 1.0.1.0
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -25,10 +25,11 @@ var numAudio = 125; // number of audio files (integer)
 var button2; // add timer (Button)
 var musicPlaying = false; // a music is being played in this page (boolean)
 var musicNumber = 0; // debug use only (integer)
+var loadMessage; // displaying which musics are ready (p)
 
 /* p5 functions */
 function setup(){
-
+    loadMessage = document.getElementById("fuck");
 
     label1 = document.createElement("label");
     document.body.appendChild(label1);
@@ -51,8 +52,23 @@ function setup(){
     console.log(audio);
     setInterval(draw2, 1000); // execute even when this page lose focus
 }
+/* User-defined functions */
+function draw2(){ // similar to draw, but not p5 function, called every second
+    /* Update loadMessage */
+    var musicList = [];
+    for(var i=0; i<numAudio; i++){
+        if(audio[i].readyState > 2){
+            musicList.push(i);
+        }
+    }
 
-function draw2(){
+    loadMessage.innerHTML = "Music ready: ";
+    loadMessage.value = "Music ready: ";
+    for(var i=0; i<musicList.length; i++){
+        loadMessage.innerHTML = loadMessage.value += i + " ";
+    }
+
+    /* Testing audio statuses */
     var isPlaying = false;
             /*for(var i = 0; i < numAudio; i++){
                 if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
@@ -74,6 +90,8 @@ function draw2(){
                 console.log(musicNumber + " audio not ready: " + audio[musicNumber].readyState);
               }
             }
+
+            /* Update routine */
     for(var i = 0; i < timers.length; i++){
         timers[i].update();
         timers[i].show();
