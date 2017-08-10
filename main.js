@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2017/8/10
-版本: 1.0.1.4
+版本: 1.0.1.5
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -26,10 +26,16 @@ var button2; // add timer (Button)
 var musicPlaying = false; // a music is being played in this page (boolean)
 var musicNumber = 0; // debug use only (integer)
 var loadMessage; // displaying which musics are ready (p)
+var loadMessage0; // 同上 下同 (p)
+var loadMessage1; // (p)
+var loadMessage2; // (p)
 
 /* p5 functions */
 function setup(){
     loadMessage = document.getElementById("fuck");
+    loadMessage0 = document.getElementById("fuck0");
+    loadMessage1 = document.getElementById("fuck1");
+    loadMessage2 = document.getElementById("fuck2");
 
     label1 = document.createElement("label");
     document.body.appendChild(label1);
@@ -63,7 +69,7 @@ function draw2(){ // similar to draw, but not p5 function, called every second
             musicList.push(i);
         }
     }
-    /*loadMessage0.innerHTML = "Music not ready 0: ";
+    loadMessage0.innerHTML = "Music not ready 0: ";
     loadMessage0.value = "Music not ready 0: ";
     for(var i=0; i<musicList.length; i++){
         if(audio[i].readyState == 0){
@@ -72,8 +78,8 @@ function draw2(){ // similar to draw, but not p5 function, called every second
         }
     }
 
-    loadMessage1.innerHTML += "Music not ready 1: ";
-    loadMessage1.value += "Music not ready 1: ";
+    loadMessage1.innerHTML = "Music not ready 1: ";
+    loadMessage1.value = "Music not ready 1: ";
     for(var i=0; i<musicList.length; i++){
         if(audio[i].readyState == 1){
             loadMessage0.innerHTML += musicList[i] + " ";
@@ -81,14 +87,14 @@ function draw2(){ // similar to draw, but not p5 function, called every second
         }
     }
 
-    loadMessage.innerHTML += "Music not ready 2: ";
-    loadMessage.value += "Music not ready 2: ";
+    loadMessage2.innerHTML = "Music not ready 2: ";
+    loadMessage2.value = "Music not ready 2: ";
     for(var i=0; i<musicList.length; i++){
         if(audio[i].readyState == 2){
-            loadMessage.innerHTML += musicList[i] + " ";
-            loadMessage.value += musicList[i] + " ";
+            loadMessage2.innerHTML += musicList[i] + " ";
+            loadMessage2.value += musicList[i] + " ";
         }
-    }*/
+    }
 
     loadMessage.innerHTML = "\r\nMusic ready: ";
     loadMessage.value = "\r\nMusic ready: ";
