@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2018/2/1
-版本: 1.0.2.1
+版本: 1.0.2.2
 */
 function Timer(){
     this.display; // (Label)
@@ -144,7 +144,7 @@ function Timer(){
     this.update = function(){ // see if time's up (void)
         var now = new Date();
         var interval = parseInt(this.destination - now);
-        if(interval <= 7000 && this.active === true && musicPlaying){
+        if(interval <= 7000 && this.active === true && musicPlaying){ // 7 sec left, pause music
             for(var i = 0; i < numAudio; i++){
                 audio[i].pause();
                 //audio[i].currentTime = 0;
@@ -153,7 +153,7 @@ function Timer(){
             console.log("Music paused");
             musicPlaying = false;
         }
-        if(interval <= 0 && this.active === true){
+        if(interval <= 0 && this.active === true){ // Time's up, play music
             var isPlaying = false;
             for(var i = 0; i < numAudio; i++){
                 if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
@@ -167,27 +167,31 @@ function Timer(){
             var random1 = Math.random();
             random1 *= audio.length;
             random1 = parseInt(random1);
-            audio[random1].play();
+            //audio[random1].play();
+            var fileName = random1 + ".mp3";
+            var audio[3] = loadSound(fileName, self.PlayMusic);
             musicPlaying = true;
             console.log("\r\n\r\nplay music #" + random1 + "\r\n");
             musicNumber = random1;
             this.active = false;
-            if(random1 === 0){
+            if(random1 === 0){ // 嘎嘎作響
                 console.log("123");
                 for(var i = 1; i <= 34; i++){
-                    setTimeout(function(){ audio[0].play(); console.log("play"); }, i*1780);
-
+                    //setTimeout(function(){ audio[0].play(); console.log("play"); }, i*1780);
+                    setTimeout(function(){ audio[3].play(); console.log("play"); }, i*1780);
                 }
             }
-            if(random1 === 119){
+            if(random1 === 119){ // 我愛北京天安門
                 for(var i = 1; i <= 12; i++){
-                    setTimeout(function(){ audio[119].play(); console.log("play"); }, i*5500);
-
+                    //setTimeout(function(){ audio[119].play(); console.log("play"); }, i*5500);
+                    setTimeout(function(){ audio[3].play(); console.log("play"); }, i*5500);
                 }
             }
         }
     }
-
+    this.PlayMusic = function(){ // successCallback of audio[3] loadSound
+        audio[3].play();
+    }
     this.Delete = function(){ // delete timer / onclick event (void)
         document.body.removeChild(self.display);
         document.body.removeChild(self.reset);
