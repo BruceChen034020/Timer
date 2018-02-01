@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2018/2/1
-版本: 1.0.2.1
+版本: 1.0.2.1 / test 0
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -21,7 +21,7 @@ var button1; // (Button)
 var textBox1; // (textarea)
 var timers = []; // (Timer array)
 var audio = [];  // audios played when time's up (Audio array)
-var numAudio = 125; // number of audio files (integer)
+var numAudio = 20; // number of audio files (integer)
 var button2; // add timer (Button)
 var musicPlaying = false; // a music is being played in this page (boolean)
 var musicNumber = 0; // debug use only (integer)
