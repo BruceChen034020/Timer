@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2018/2/1
-版本: 1.0.2.4
+版本: 1.0.2.5
 */
 function Timer(){
     this.display; // (Label)
@@ -155,11 +155,11 @@ function Timer(){
         }
         if(interval <= 0 && this.active === true){ // Time's up, play music
             var isPlaying = false;
-            for(var i = 0; i < numAudio; i++){
+            var i=3;//for(var i = 0; i < numAudio; i++){
                 if(audio[i].currentTime > 0 && !audio[i].paused && !audio[i].ended && audio[i].readyState > 2){
                     isPlaying = true;
                 }
-            }
+            //}
             if(isPlaying){
                 console.log("沒救了");
             }
