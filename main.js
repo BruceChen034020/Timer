@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2018/2/1
-版本: 1.0.2.1 / test 5
+版本: 1.0.2.1 / test 1
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -24,7 +24,7 @@ var audio = [];  // audios played when time's up (Audio array)
 var numAudio = 20; // number of audio files (integer)
 var button2; // add timer (Button)
 var musicPlaying = false; // a music is being played in this page (boolean)
-var musicNumber = 3; // debug use only (integer)
+var musicNumber = 0; // debug use only (integer)
 var loadMessage; // displaying which musics are ready (p)
 var loadMessage0; // 同上 下同 (p)
 var loadMessage1; // (p)
@@ -33,11 +33,10 @@ var loadMessage2; // (p)
 /* p5 functions */
 function preload(){
   /* Set audios **/
-  /*for(var i=0; i<numAudio; i++){
+  for(var i=0; i<numAudio; i++){
     var fileName = i + ".mp3";
     audio[i] = loadSound(fileName);
-  }*/
-  audio[3] = loadSound("0.mp3");
+  }
   console.log(audio)
 }
 function setup(){
@@ -71,7 +70,7 @@ function setup(){
 /* User-defined functions */
 function draw2(){ // similar to draw, but not p5 function, called every second
     /* Update loadMessage */
-    /*var musicList = [];
+    var musicList = [];
     for(var i=0; i<numAudio; i++){
         
         if(audio[i].readyState > 2){
@@ -111,7 +110,7 @@ function draw2(){ // similar to draw, but not p5 function, called every second
     for(var i=0; i<musicList.length; i++){
         loadMessage.innerHTML += musicList[i] + " ";
         loadMessage.value += musicList[i] + " ";
-    }*/
+    }
 
     /* Testing audio statuses */
     var isPlaying = false;
