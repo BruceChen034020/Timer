@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2018/2/1
-版本: 1.0.2.1 / test 4
+版本: 1.0.2.1 / test 5
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -37,6 +37,7 @@ function preload(){
     var fileName = i + ".mp3";
     audio[i] = loadSound(fileName);
   }*/
+  audio[3] = loadSound("0.mp3");
   console.log(audio)
 }
 function setup(){
