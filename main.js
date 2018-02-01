@@ -5,8 +5,8 @@
 聯絡方式
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
-最後修改日期: 2017/8/10
-版本: 1.0.1.8
+最後修改日期: 2018/2/1
+版本: 1.0.2.0
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -31,6 +31,14 @@ var loadMessage1; // (p)
 var loadMessage2; // (p)
 
 /* p5 functions */
+function preload(){
+  /* Set audios **/
+  for(var i=0; i<numAdio; i++){
+    var fileName = i + ".mp3";
+    audio[i] = loadSound(fileName);
+  }
+  console.log(audio)
+}
 function setup(){
     loadMessage = document.getElementById("fuck");
     loadMessage0 = document.getElementById("fuck0");
@@ -51,11 +59,11 @@ function setup(){
     button1.addEventListener("click", button1_Clicked);
 
             /* Set audios **/
-    for(var i = 0; i < numAudio; i++){
+    /*for(var i = 0; i < numAudio; i++){
         var fileName = i + ".mp3";
         audio[i] = new Audio(fileName);
     }
-    console.log(audio);
+    console.log(audio);*/
     setInterval(draw2, 1000); // execute even when this page lose focus
 }
 /* User-defined functions */
