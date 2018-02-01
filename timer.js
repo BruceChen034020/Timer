@@ -1,7 +1,7 @@
 /*
 作者: 陳光穎 Bruce Chen
 最後修改日期: 2018/2/1
-版本: 1.0.2.2
+版本: 1.0.2.3
 */
 function Timer(){
     this.display; // (Label)
@@ -169,7 +169,7 @@ function Timer(){
             random1 = parseInt(random1);
             //audio[random1].play();
             var fileName = random1 + ".mp3";
-            var audio[3] = loadSound(fileName, self.PlayMusic);
+            audio[3] = loadSound(fileName, self.PlayMusic);
             musicPlaying = true;
             console.log("\r\n\r\nplay music #" + random1 + "\r\n");
             musicNumber = random1;
