@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2018/2/1
-版本: 1.0.2.1 / test 2
+版本: 1.0.2.1 / test 3
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -70,7 +70,7 @@ function setup(){
 /* User-defined functions */
 function draw2(){ // similar to draw, but not p5 function, called every second
     /* Update loadMessage */
-    var musicList = [];
+    /*var musicList = [];
     for(var i=0; i<numAudio; i++){
         
         if(audio[i].readyState > 2){
@@ -110,7 +110,7 @@ function draw2(){ // similar to draw, but not p5 function, called every second
     for(var i=0; i<musicList.length; i++){
         loadMessage.innerHTML += musicList[i] + " ";
         loadMessage.value += musicList[i] + " ";
-    }
+    }*/
 
     /* Testing audio statuses */
     var isPlaying = false;
