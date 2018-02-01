@@ -172,14 +172,14 @@ function Timer(){
             console.log("\r\n\r\nplay music #" + random1 + "\r\n");
             musicNumber = random1;
             this.active = false;
-            if(random1 === 0){
+            if(random1 === 0){ // 嘎嘎作響
                 console.log("123");
                 for(var i = 1; i <= 34; i++){
                     setTimeout(function(){ audio[0].play(); console.log("play"); }, i*1780);
 
                 }
             }
-            if(random1 === 119){
+            if(random1 === 119){ // 我愛北京天安門
                 for(var i = 1; i <= 12; i++){
                     setTimeout(function(){ audio[119].play(); console.log("play"); }, i*5500);
 
