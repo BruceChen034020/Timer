@@ -70,6 +70,7 @@ function setup(){
 }
 /* User-defined functions */
 function draw2(){ // similar to draw, but not p5 function, called every second
+  console.log(musicNumber);
     /* Update loadMessage */
     /*var musicList = [];
     for(var i=0; i<numAudio; i++){
