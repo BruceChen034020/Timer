@@ -224,3 +224,4 @@ function Timer(){
     this.delete; // (Button) */
     }
 }
+ 
