@@ -6,7 +6,7 @@
   Facebook連結: https://www.facebook.com/bruce.chen.372
   LINE ID: brucechen0
 最後修改日期: 2018/2/1
-版本: 1.0.2.1 / test 0
+版本: 1.0.2.1 / test 1
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -40,6 +40,7 @@ function preload(){
   console.log(audio)
 }
 function setup(){
+  console.log("setup");
     loadMessage = document.getElementById("fuck");
     loadMessage0 = document.getElementById("fuck0");
     loadMessage1 = document.getElementById("fuck1");
